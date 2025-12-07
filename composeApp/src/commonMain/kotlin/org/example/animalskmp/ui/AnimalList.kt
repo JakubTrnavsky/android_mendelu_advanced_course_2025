@@ -2,7 +2,7 @@ package org.example.animalskmp.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -67,7 +67,7 @@ fun AnimalListItem(
     animal: Animal,
     modifier: Modifier = Modifier,
 ) {
-    Box(
+    Column(
         modifier = modifier
             .clip(RoundedCornerShape(8.dp))
             .background(MaterialTheme.colorScheme.primaryContainer)
@@ -78,9 +78,16 @@ fun AnimalListItem(
     ) {
         Text(
             text = animal.name,
-            style = MaterialTheme.typography.headlineSmall,
+            style = MaterialTheme.typography.titleLarge,
+            color = MaterialTheme.colorScheme.primary,
             overflow = TextOverflow.Ellipsis,
             maxLines = 1,
+        )
+        Text(
+            text = animal.summary,
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurface,
+            overflow = TextOverflow.Ellipsis,
         )
     }
 }

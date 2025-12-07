@@ -16,6 +16,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import animalskmp.composeapp.generated.resources.Res
 import animalskmp.composeapp.generated.resources.ic_back
@@ -44,6 +46,7 @@ fun AnimalDetail(
                     painter = painterResource(Res.drawable.ic_back),
                     contentDescription = "Back"
                 )
+                        colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.onSurface),
             }
         }
 
@@ -55,12 +58,14 @@ fun AnimalDetail(
         ) {
             Text(
                 text = animal.name,
-                style = MaterialTheme.typography.headlineMedium
+                style = MaterialTheme.typography.headlineMedium,
+                color = MaterialTheme.colorScheme.primary,
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
                 text = animal.description,
-                style = MaterialTheme.typography.bodyMedium
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurface,
             )
         }
     }
