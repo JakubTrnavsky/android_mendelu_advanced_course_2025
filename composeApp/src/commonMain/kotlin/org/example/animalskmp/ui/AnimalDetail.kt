@@ -44,9 +44,9 @@ fun AnimalDetail(
             ) {
                 Image(
                     painter = painterResource(Res.drawable.ic_back),
+                    colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.onSurface),
                     contentDescription = "Back"
                 )
-                        colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.onSurface),
             }
         }
 
