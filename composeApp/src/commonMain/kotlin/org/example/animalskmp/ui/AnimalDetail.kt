@@ -21,6 +21,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import animalskmp.composeapp.generated.resources.Res
 import animalskmp.composeapp.generated.resources.ic_back
+import coil3.compose.AsyncImage
 import org.example.animalskmp.data.Animal
 import org.jetbrains.compose.resources.painterResource
 
@@ -36,8 +37,14 @@ fun AnimalDetail(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 8.dp)
+                .height(200.dp) // Set a fixed height for the image for now
         ) {
+            AsyncImage(
+                model = animal.image,
+                contentDescription = animal.name,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.fillMaxSize()
+            )
             IconButton(
                 modifier = Modifier.align(Alignment.TopStart),
                 onClick = onBackClick
