@@ -35,7 +35,7 @@ fun AnimalList(
     val state = rememberLazyListState()
 
     val density = LocalDensity.current
-    val fadeOutHeight = with(density) { 64.dp.toPx() }
+    val fadeOutHeight = with(density) { 96.dp.toPx() }
 
     LazyColumn(
         modifier = modifier.fadeOut(
@@ -69,7 +69,7 @@ fun AnimalListItem(
 ) {
     Box(
         modifier = modifier
-            .clip(RoundedCornerShape(16.dp))
+            .clip(RoundedCornerShape(8.dp))
             .background(MaterialTheme.colorScheme.primaryContainer)
             .padding(
                 horizontal = 16.dp,
@@ -78,7 +78,7 @@ fun AnimalListItem(
     ) {
         Text(
             text = animal.name,
-            style = MaterialTheme.typography.headlineMedium,
+            style = MaterialTheme.typography.headlineSmall,
             overflow = TextOverflow.Ellipsis,
             maxLines = 1,
         )

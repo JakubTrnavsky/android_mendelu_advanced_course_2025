@@ -60,7 +60,7 @@ fun AnimalDetail(
             Spacer(modifier = Modifier.height(16.dp))
             Text(
                 text = animal.description,
-                style = MaterialTheme.typography.bodySmall
+                style = MaterialTheme.typography.bodyMedium
             )
         }
     }

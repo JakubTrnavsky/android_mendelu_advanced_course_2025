@@ -9,13 +9,14 @@ import org.example.animalskmp.data.Animal
 import org.example.animalskmp.data.AnimalMock
 import org.example.animalskmp.ui.AnimalDetail
 import org.example.animalskmp.ui.AnimalList
+import org.example.animalskmp.ui.theme.AppTheme
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 
 @Composable
 @Preview
 fun App() {
-    MaterialTheme {
+    AppTheme {
         val animals = remember { AnimalMock.mockList() }
         var selectedAnimalState by remember { mutableStateOf<Animal?>(null) }
 
