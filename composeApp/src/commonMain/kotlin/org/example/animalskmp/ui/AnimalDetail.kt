@@ -21,6 +21,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import animalskmp.composeapp.generated.resources.Res
 import animalskmp.composeapp.generated.resources.ic_back
+import animalskmp.composeapp.generated.resources.ic_copy
 import coil3.compose.AsyncImage
 import org.example.animalskmp.data.Animal
 import org.jetbrains.compose.resources.painterResource
@@ -30,6 +31,7 @@ fun AnimalDetail(
     animal: Animal,
     showBackButton: Boolean = true,
     onBackClick: () -> Unit = {},
+    onCopyText: (String) -> Unit = {},
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -57,6 +59,15 @@ fun AnimalDetail(
                         contentDescription = "Back"
                     )
                 }
+            }
+            IconButton(
+                modifier = Modifier.align(Alignment.TopEnd),
+                onClick = { onCopyText("${animal.name}\n${animal.description}") }
+            ) {
+                Image(
+                    painter = painterResource(Res.drawable.ic_copy),
+                    contentDescription = "Copy"
+                )
             }
         }
 

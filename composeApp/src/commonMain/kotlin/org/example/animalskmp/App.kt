@@ -28,6 +28,7 @@ fun App() {
         val navigator = rememberListDetailPaneScaffoldNavigator<Animal>()
         val animals = remember { AnimalMock.mockList() }
         val coroutineScope = rememberCoroutineScope()
+        val clipboard = remember { getClipboard() }
 
         ListDetailPaneScaffold(
             modifier = Modifier
@@ -65,6 +66,7 @@ fun App() {
                                     navigator.navigateBack()
                                 }
                             },
+                            onCopyText = { clipboard.setString(it) },
                         )
                     }
                 }
