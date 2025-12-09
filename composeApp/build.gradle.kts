@@ -41,10 +41,8 @@ kotlin {
     }
     
     sourceSets {
-        appleMain {
-            dependencies {
-                implementation(libs.ktor.client.darwin)
-            }
+        appleMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
         androidMain.dependencies {
             implementation(compose.preview)
