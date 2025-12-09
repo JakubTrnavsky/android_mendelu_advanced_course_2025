@@ -63,6 +63,7 @@ kotlin {
             implementation(libs.compose.multiplatform.material3.adaptive.navigation)
             implementation(libs.coil.compose)
             implementation(libs.coil.ktor)
+            implementation(libs.androidx.lifecycle.viewmodel)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
